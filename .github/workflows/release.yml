@@ -18,7 +18,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '7.0.x'
+        dotnet-version: '8.0.x'
         
     - name: Restore dependencies
       run: dotnet restore
@@ -29,21 +29,21 @@ jobs:
     - name: Publish Self-Contained
       run: |
         dotnet publish -c Release -r win-x64 --self-contained true /p:PublishSingleFile=true
-        dir bin/Release/net7.0-windows/win-x64/publish/
-        move "bin/Release/net7.0-windows/win-x64/publish/LeetCodeTimer.exe" "bin/Release/net7.0-windows/win-x64/publish/LeetCodeTimer-standalone.exe"
+        dir bin/Release/net8.0-windows/win-x64/publish/
+        move "bin/Release/net8.0-windows/win-x64/publish/LeetCodeTimer.exe" "bin/Release/net8.0-windows/win-x64/publish/LeetCodeTimer-standalone.exe"
       
     - name: Publish Framework-Dependent
       run: |
         dotnet publish -c Release -r win-x64 --self-contained false /p:PublishSingleFile=true
-        dir bin/Release/net7.0-windows/win-x64/publish/
-        move "bin/Release/net7.0-windows/win-x64/publish/LeetCodeTimer.exe" "bin/Release/net7.0-windows/win-x64/publish/LeetCodeTimer-requires-dotnet.exe"
+        dir bin/Release/net8.0-windows/win-x64/publish/
+        move "bin/Release/net8.0-windows/win-x64/publish/LeetCodeTimer.exe" "bin/Release/net8.0-windows/win-x64/publish/LeetCodeTimer-requires-dotnet.exe"
       
     - name: Create Release
       uses: ncipollo/release-action@v1
       with:
         artifacts: |
-          bin/Release/net7.0-windows/win-x64/publish/LeetCodeTimer-standalone.exe
-          bin/Release/net7.0-windows/win-x64/publish/LeetCodeTimer-requires-dotnet.exe
+          bin/Release/net8.0-windows/win-x64/publish/LeetCodeTimer-standalone.exe
+          bin/Release/net8.0-windows/win-x64/publish/LeetCodeTimer-requires-dotnet.exe
         token: ${{ secrets.GITHUB_TOKEN }}
         allowUpdates: true
         generateReleaseNotes: true
@@ -60,6 +60,6 @@ jobs:
           
           2. **LeetCodeTimer-requires-dotnet.exe**
              - Framework-dependent executable
-             - Requires .NET runtime to be installed
+             - Requires .NET 8.0 runtime
              - Smaller file size
-             - Requires .NET 7.0 or later to be installed 
+             - Requires .NET 8.0 or later to be installed 
