@@ -1,5 +1,6 @@
 # LeetCode 45-Minute Timer
 
+<img src="img/desktop_timer.png" align="right" width="20%" style="margin-right: 5%"/>
 A simple, modern Windows application to help you follow the 45-minute rule when solving LeetCode problems. This timer helps you manage your problem-solving sessions effectively by breaking them down into three phases:
 
 1. **Problem Solving (25 minutes)**
@@ -13,6 +14,10 @@ A simple, modern Windows application to help you follow the 45-minute rule when 
 3. **Solution Study (15 minutes)**
    - If still unable to solve, study the solution
    - Understand the optimal approach and implementation
+
+## Screenshot
+
+<img src="img/screenshot.png" width="50%"/>
 
 ## Features
 
