@@ -9,13 +9,13 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <PublishSingleFile>true</PublishSingleFile>
     <AssemblyName>LeetCodeTimer</AssemblyName>
-    <ApplicationIcon>Resources\desktop_timer.ico</ApplicationIcon>
+    <ApplicationIcon>desktop_timer.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Update="Resources\desktop_timer.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <EmbeddedResource Include="desktop_timer.ico">
+      <LogicalName>desktop_timer.ico</LogicalName>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

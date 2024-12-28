@@ -19,10 +19,10 @@ public partial class Form1 : Form
         InitializeComponent();
         try
         {
-            string iconPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "desktop_timer.ico");
-            if (File.Exists(iconPath))
+            using (var stream = GetType().Assembly.GetManifestResourceStream("desktop_timer.ico"))
+            if (stream != null)
             {
-                this.Icon = new Icon(iconPath);
+                this.Icon = new Icon(stream);
             }
         }
         catch (Exception)
