@@ -1,3 +1,5 @@
+#nullable enable
+
 using System;
 using System.Drawing;
 using System.Media;
@@ -86,7 +88,7 @@ public partial class Form1 : Form
         ResetTimer();
     }
 
-    private void Timer_Tick(object sender, EventArgs e)
+    private void Timer_Tick(object? sender, EventArgs e)
     {
         secondsRemaining--;
         UpdateDisplay();
@@ -119,7 +121,7 @@ public partial class Form1 : Form
         lblPhase.Text = phaseNames[currentPhase];
     }
 
-    private void BtnStart_Click(object sender, EventArgs e)
+    private void BtnStart_Click(object? sender, EventArgs e)
     {
         if (timer.Enabled)
         {
@@ -133,7 +135,7 @@ public partial class Form1 : Form
         }
     }
 
-    private void BtnReset_Click(object sender, EventArgs e)
+    private void BtnReset_Click(object? sender, EventArgs e)
     {
         ResetTimer();
     }
@@ -152,7 +154,7 @@ public partial class Form1 : Form
         SystemSounds.Exclamation.Play();
     }
 
-    private void BtnSkip_Click(object sender, EventArgs e)
+    private void BtnSkip_Click(object? sender, EventArgs e)
     {
         if (currentPhase < 2)
         {
