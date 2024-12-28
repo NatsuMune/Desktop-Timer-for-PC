@@ -2,11 +2,13 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net9.0-windows</TargetFramework>
-    <RootNamespace>Desktop_Timer</RootNamespace>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <RootNamespace>LeetCodeTimer</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <PublishSingleFile>true</PublishSingleFile>
+    <AssemblyName>LeetCodeTimer</AssemblyName>
   </PropertyGroup>
 
 </Project>

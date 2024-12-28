@@ -29,19 +29,21 @@ jobs:
     - name: Publish Self-Contained
       run: |
         dotnet publish -c Release -r win-x64 --self-contained true /p:PublishSingleFile=true
-        mv bin/Release/**/publish/Desktop*.exe bin/Release/**/publish/LeetCodeTimer-standalone.exe
+        dir bin/Release/net7.0-windows/win-x64/publish/
+        move "bin/Release/net7.0-windows/win-x64/publish/LeetCodeTimer.exe" "bin/Release/net7.0-windows/win-x64/publish/LeetCodeTimer-standalone.exe"
       
     - name: Publish Framework-Dependent
       run: |
         dotnet publish -c Release -r win-x64 --self-contained false /p:PublishSingleFile=true
-        mv bin/Release/**/publish/Desktop*.exe bin/Release/**/publish/LeetCodeTimer-requires-dotnet.exe
+        dir bin/Release/net7.0-windows/win-x64/publish/
+        move "bin/Release/net7.0-windows/win-x64/publish/LeetCodeTimer.exe" "bin/Release/net7.0-windows/win-x64/publish/LeetCodeTimer-requires-dotnet.exe"
       
     - name: Create Release
       uses: ncipollo/release-action@v1
       with:
         artifacts: |
-          bin/Release/**/publish/LeetCodeTimer-standalone.exe
-          bin/Release/**/publish/LeetCodeTimer-requires-dotnet.exe
+          bin/Release/net7.0-windows/win-x64/publish/LeetCodeTimer-standalone.exe
+          bin/Release/net7.0-windows/win-x64/publish/LeetCodeTimer-requires-dotnet.exe
         token: ${{ secrets.GITHUB_TOKEN }}
         allowUpdates: true
         generateReleaseNotes: true
