@@ -46,6 +46,9 @@ public partial class Form1 : Form
         this.TopMost = true;
         this.BackColor = Color.FromArgb(245, 245, 245);
         this.Padding = new Padding(15);
+        
+        // Add these lines to center the window
+        this.StartPosition = FormStartPosition.CenterScreen;
 
         // Timer setup - Add these lines back
         timer.Interval = 1000; // 1 second
