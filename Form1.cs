@@ -30,6 +30,8 @@ public partial class Form1 : Form
             // Silently continue if icon loading fails
         }
         SetupForm();
+        
+        this.Shown += (s, e) => this.TopMost = true;
     }
 
     private void SetupForm()
